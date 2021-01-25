@@ -10,15 +10,15 @@ import config from './config';
 Amplify.configure({
   Auth: {
     mandatorySignIn: true,
-    region: config.cogntio.REGION,
-    userPoolId: config.cogntio.USER_POOL_ID,
-    identityPoolId: config.cogntio.IDENTITY_POOL_ID,
-    userPoolWebClientId: config.cogntio.APP_CLIENT_ID,
+    region: config.cognito.REGION,
+    userPoolId: config.cognito.USER_POOL_ID,
+    identityPoolId: config.cognito.IDENTITY_POOL_ID,
+    userPoolWebClientId: config.cognito.APP_CLIENT_ID,
   },
   Storage: {
     region: config.s3.REGION,
     bucket: config.s3.BUCKET,
-    identityPoolId: config.cognito.IDENTITY_POOL_ID
+    identityPoolId: config.cognito.IDENTITY_POOL_ID,
   },
   API: {
     endpoints: [
