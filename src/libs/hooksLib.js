@@ -7,6 +7,7 @@ export function useFormFields(initialState) {
 
   // return array with fields
   // and a callback function that sets the new state based on the field that is updated
+  // callback fn is called from consuming component
   return [
     fields,
     function(event) {
