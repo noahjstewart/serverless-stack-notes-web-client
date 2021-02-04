@@ -73,9 +73,8 @@ export default function Notes() {
     try {
       if (file.current) {
         attachment = await s3Upload(file.current);
-        debugger;
         // delete previous attachment
-        await s3Delete(note.attachment);
+        s3Delete(note.attachment);
       }
 
       await saveNote({
@@ -105,11 +104,10 @@ export default function Notes() {
     setIsDeleting(true);
     try {
       const filename = note.attachment || null;
-      debugger;
       await deleteNote();
       
       if (filename) {
-        await s3Delete(filename);
+        s3Delete(filename);
       }
       history.push("/");
     } catch (e) {
